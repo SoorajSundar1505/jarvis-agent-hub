@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>J.A.R.V.I.S. — Mission Plan</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="hud-background" aria-hidden="true">
+    <div class="radial-glow"></div>
+    <div class="hud-grid hud-grid-primary"></div>
+    <div class="hud-grid hud-grid-secondary"></div>
+    <div class="hex-grid-overlay"></div>
+    <div class="arc-reactor">
+      <div class="arc-segments"></div>
+      <div class="arc-triangles"></div>
+      <div class="arc-ring arc-ring-1"></div>
+      <div class="arc-ring arc-ring-2"></div>
+      <div class="arc-ring arc-ring-3"></div>
+      <div class="arc-core"></div>
+      <div class="arc-flare"></div>
+    </div>
+    <div class="hud-corners">
+      <span class="corner corner-tl"></span>
+      <span class="corner corner-tr"></span>
+      <span class="corner corner-bl"></span>
+      <span class="corner corner-br"></span>
+    </div>
+    <div class="hud-scan-beam"></div>
+  </div>
+
+  <div class="scanlines"></div>
+  <div class="vignette"></div>
+
+  <header class="hud-header">
+    <div class="header-left">
+      <div class="status-dot"></div>
+      <span class="system-label">STARK INDUSTRIES</span>
+    </div>
+    <h1 class="title">
+      <span class="title-main">JARVIS</span>
+      <span class="title-sub" id="titleSub">Council Protocol · Commander Suraj</span>
+    </h1>
+    <div class="header-right">
+      <span class="clock" id="clock">00:00:00</span>
+    </div>
+  </header>
+
+  <main class="main-stage">
+    <section class="prompt-section" id="promptSection">
+      <div class="prompt-frame">
+        <label for="userPrompt" class="prompt-label">MISSION PLAN</label>
+        <textarea
+          id="userPrompt"
+          placeholder="Describe your plan — e.g. Tour Europe this September, land in Germany and explore nearby countries..."
+          rows="3"
+        ></textarea>
+        <div class="prompt-actions">
+          <button class="btn-initiate" id="initiateBtn">
+            <span class="btn-glow"></span>
+            <span class="btn-text">SUBMIT PLAN</span>
+            <span class="btn-hint">clap, then say "Agents assemble"</span>
+          </button>
+          <button type="button" class="mic-status" id="micStatus">
+            <div class="mic-ring"></div>
+            <svg class="mic-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+              <path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/>
+              <path d="M19 10v2a7 7 0 0 1-14 0v-2"/>
+              <line x1="12" y1="19" x2="12" y2="23"/>
+              <line x1="8" y1="23" x2="16" y2="23"/>
+            </svg>
+            <span id="micLabel">CLICK MIC TO ENABLE</span>
+            <div class="mic-level"><div class="mic-level-fill" id="micLevelFill"></div></div>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <div class="council-stage" id="councilStage">
+      <div class="debate-grid" id="debateGrid">
+      <article class="agent-card" data-agent="natasha" id="agent-natasha">
+        <div class="hex-frame">
+          <div class="hex-inner">
+            <div class="agent-icon">🔴</div>
+            <h2 class="agent-name">NATASHA</h2>
+            <p class="agent-role">Strategic Instinct</p>
+            <div class="boot-sequence">
+              <span class="boot-line">INITIALIZING...</span>
+              <div class="boot-bar"><div class="boot-fill"></div></div>
+            </div>
+            <div class="agent-content">
+              <p class="agent-response"></p>
+              <div class="slot-timer">
+                <div class="slot-bar"><div class="slot-fill"></div></div>
+                <span class="slot-label">7s</span>
+              </div>
+              <div class="speaker-indicator">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="status-badge">OFFLINE</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="agent-card" data-agent="thor" id="agent-thor">
+        <div class="hex-frame">
+          <div class="hex-inner">
+            <div class="agent-icon">🟢</div>
+            <h2 class="agent-name">THOR</h2>
+            <p class="agent-role">Bold Opportunity</p>
+            <div class="boot-sequence">
+              <span class="boot-line">INITIALIZING...</span>
+              <div class="boot-bar"><div class="boot-fill"></div></div>
+            </div>
+            <div class="agent-content">
+              <p class="agent-response"></p>
+              <div class="slot-timer">
+                <div class="slot-bar"><div class="slot-fill"></div></div>
+                <span class="slot-label">7s</span>
+              </div>
+              <div class="speaker-indicator">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="status-badge">OFFLINE</div>
+          </div>
+        </div>
+      </article>
+
+      <article class="agent-card" data-agent="pepper" id="agent-pepper">
+        <div class="hex-frame">
+          <div class="hex-inner">
+            <div class="agent-icon">🔵</div>
+            <h2 class="agent-name">PEPPER</h2>
+            <p class="agent-role">Logic & Planning</p>
+            <div class="boot-sequence">
+              <span class="boot-line">INITIALIZING...</span>
+              <div class="boot-bar"><div class="boot-fill"></div></div>
+            </div>
+            <div class="agent-content">
+              <p class="agent-response"></p>
+              <div class="slot-timer">
+                <div class="slot-bar"><div class="slot-fill"></div></div>
+                <span class="slot-label">7s</span>
+              </div>
+              <div class="speaker-indicator">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="status-badge">OFFLINE</div>
+          </div>
+        </div>
+      </article>
+      </div>
+
+      <div class="jarvis-stage" id="jarvisStage">
+      <div class="jarvis-mask-stage" id="jarvisMaskStage" aria-hidden="true">
+        <div class="jarvis-mask-ring"></div>
+        <div class="jarvis-mask-ring jarvis-mask-ring-2"></div>
+        <svg class="jarvis-mask-svg" viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="helmetGlow" x="-40%" y="-40%" width="180%" height="180%" color-interpolation-filters="sRGB">
+              <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#FFD700" flood-opacity="0.65"/>
+              <feDropShadow dx="0" dy="0" stdDeviation="5" flood-color="#00E5FF" flood-opacity="0.35"/>
+            </filter>
+          </defs>
+          <g filter="url(#helmetGlow)">
+          <path d="M32 4C18 4 8 14 8 28v8c0 2 1 4 3 5l5 3v6h32v-6l5-3c2-1 3-3 3-5v-8c0-14-10-24-24-24z" fill="#8B0000" stroke="#FFD700" stroke-width="1.2"/>
+          <path d="M32 8c-10 0-18 8-18 18v6c0 1 .5 2 1.5 2.5L22 38v4h20v-4l6.5-3.5c1-.5 1.5-1.5 1.5-2.5v-6c0-10-8-18-18-18z" fill="#B22222"/>
+          <path d="M22 22h20l-2 14H24L22 22z" fill="#FFD700" opacity="0.95"/>
+          <path d="M26 28h12v4H26v-4z" fill="#00E5FF" opacity="0.85"/>
+          <path d="M28 32h8v6c0 2-2 4-4 4s-4-2-4-4v-6z" fill="#1a1a1a"/>
+          <path d="M14 30c2 6 8 10 18 10s16-4 18-10" stroke="#FFD700" stroke-width="1" opacity="0.6"/>
+          </g>
+        </svg>
+      </div>
+      <article class="agent-card jarvis-card" data-agent="jarvis" id="agent-jarvis">
+        <div class="hex-frame">
+          <div class="hex-inner">
+            <div class="agent-icon jarvis-icon-small">⚡</div>
+            <h2 class="agent-name">JARVIS</h2>
+            <p class="operator-tag" id="operatorTag">Commander · SURAJ</p>
+            <p class="agent-role">Final Verdict</p>
+            <div class="boot-sequence">
+              <span class="boot-line">SYNTHESIZING...</span>
+              <div class="boot-bar"><div class="boot-fill"></div></div>
+            </div>
+            <div class="agent-content">
+              <p class="agent-response"></p>
+              <div class="slot-timer">
+                <div class="slot-bar"><div class="slot-fill"></div></div>
+                <span class="slot-label">7s</span>
+              </div>
+              <div class="speaker-indicator">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M3 9v6h4l5 5V4L7 9H3zm13.5 3c0-1.77-1.02-3.29-2.5-4.03v8.05c1.48-.73 2.5-2.25 2.5-4.02z"/>
+                </svg>
+              </div>
+            </div>
+            <div class="status-badge">STANDBY</div>
+          </div>
+        </div>
+      </article>
+      </div>
+    </div>
+
+    <div class="sequence-overlay" id="sequenceOverlay">
+      <div class="overlay-text" id="overlayText"></div>
+    </div>
+  </main>
+
+  <footer class="hud-footer">
+    <div class="footer-line"></div>
+    <span id="footerStatus">AWAITING PLAN — SURAJ</span>
+    <button class="music-toggle" id="musicToggle" aria-pressed="true" title="Toggle theme music">
+      <svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14">
+        <path d="M12 3v10.55c-.59-.34-1.27-.55-2-.55-2.21 0-4 1.79-4 4s1.79 4 4 4 4-1.79 4-4V7h4V3h-6z"/>
+      </svg>
+      <span>THEME</span>
+    </button>
+    <div class="footer-line"></div>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

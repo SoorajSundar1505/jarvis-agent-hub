@@ -1,0 +1,24 @@
+{
+  "name": "jarvis-agent-assembly",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "concurrently \"tsx watch src/server.ts\" \"esbuild src/client/app.ts --bundle --outfile=public/app.js --format=iife --watch\"",
+    "build": "esbuild src/client/app.ts --bundle --outfile=public/app.js --format=iife && tsc",
+    "start": "node dist/server.js"
+  },
+  "dependencies": {
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "openai": "^4.77.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.0",
+    "@types/node": "^22.10.2",
+    "concurrently": "^9.1.0",
+    "esbuild": "^0.24.2",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}
